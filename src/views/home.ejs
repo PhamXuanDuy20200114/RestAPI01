@@ -5,12 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Hello Gau</h1>
-    <img src="/image/gau.jpg" alt="Anh Gau">
+
+    <div class="navbar">
+        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#"><i class="fa-solid fa-user-plus"></i> New</a>
+        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+    </div>
+
+    <div class="w3-container">
+        <h2>List users:</h2>
+        <table class="w3-table-all w3-hoverable">
+            <thead>
+                <tr class="w3-light-grey">
+                    <th>ID</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <% dataUser.forEach(function(user) { %>
+                <tr>
+                    <td>
+                        <%= user.user_id%>
+                    </td>
+                    <td>
+                        <%= user.name%>
+                    </td>
+                    <td>
+                        <%= user.email%>
+                    </td>
+                    <td>
+                        <%= user.password%>
+                    </td>
+                    <td>
+                        <%= user.phone%>
+                    </td>
+                    <td>
+                        <a href="/detail/user/<%=user.user_id%>" target="_blank">Detail</a>
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <% }); %>
+        </table>
+    </div>
+
 </body>
 
 </html>
