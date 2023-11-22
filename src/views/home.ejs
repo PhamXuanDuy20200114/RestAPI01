@@ -24,7 +24,7 @@
         <table class="w3-table-all w3-hoverable">
             <thead>
                 <tr class="w3-light-grey">
-                    <th>ID</th>
+                    <th>STT</th>
                     <th>User Name</th>
                     <th>Email</th>
                     <th>Password</th>
@@ -50,13 +50,40 @@
                         <%= user.phone%>
                     </td>
                     <td>
-                        <a href="/detail/user/<%=user.user_id%>" target="_blank">Detail</a>
+                        <a href="/detail/user/<%=user.user_id%>">Detail</a>
                         <button type="button">Edit</button>
                         <button type="button">Delete</button>
                     </td>
                 </tr>
                 <% }); %>
         </table>
+    </div>
+
+    <div class="create-user-container">
+        <h3>Create new user</h3>
+        <form action="/create-new-user" method="POST">
+            <div>
+                <label for="name">User Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email..">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password" placeholder="Your password..">
+            </div>
+
+            <div>
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="Your phone..">
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
 </body>
